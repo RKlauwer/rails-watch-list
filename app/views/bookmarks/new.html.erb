@@ -1,6 +1,6 @@
-<div class="container">
-  <%= simple_form_for([@list, @bookmark]) do |f| %>
-    <%= f.input :movie, collection: Movie.all, input_html: { class: 'select2', multiple: true }, include_hidden: false %>
-    <%= f.submit %>
-  <% end %>
-</div>
+<h3>Add a movie to your <%= @list.name %> list</h3>
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :comment %>
+  <%= f.association :movie, prompt: 'Select a movie', input_html: { class: 'select2' } %>
+  <%= f.submit class: 'btn btn-flat' %>
+<% end %>

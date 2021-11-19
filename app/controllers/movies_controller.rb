@@ -21,7 +21,7 @@ class MoviesController < ApplicationController
   end
 
   def edit
-    @restaurant = Movie.find(params[:id])
+    @movie = Movie.find(params[:id])
   end
 
   def update
